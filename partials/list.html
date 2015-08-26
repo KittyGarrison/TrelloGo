@@ -1,0 +1,24 @@
+<div ng-controller="listController as vmList">
+	<nav ng-include="'./partials/nav.html'"></nav>
+	<div class="views">
+		<div class="arrow">
+			<img src="../images/prvs.png" ng-click="vmList.currentPage=vmList.currentPage-1" ng-hide="vmList.currentPage == 0">
+		    <!-- <button ng-disabled="vmList.currentPage == 0" ng-click="vmList.currentPage=vmList.currentPage-1">
+		        <<
+		    </button> -->
+		</div>
+		<div class="list">
+			<h3>{{vmList.listName}} </h3><h4> {{vmList.currentPage+1}}/{{vmList.numberOfPages()}}</h4>
+			<div class="card" ng-click="vmList.goToAddCard()"><h1>+</h1></div>
+			<ul>
+				<li class="card" ng-repeat="card in vmList.cards | startFrom:vmList.currentPage*vmList.pageSize | limitTo:vmList.pageSize">{{card.name}}</li>
+			</ul>
+		</div>
+		<div class="arrow">
+			<img src="../images/next.png" ng-click="vmList.currentPage=vmList.currentPage+1" ng-hide="vmList.currentPage >= vmList.cards.length/vmList.pageSize - 1">
+		    <!-- <button ng-disabled="vmList.currentPage >= vmList.cards.length/vmList.pageSize - 1" ng-click="vmList.currentPage=vmList.currentPage+1">
+		        >>
+		    </button> -->
+		</div>
+	</div>
+</div>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Trello Go</title>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="./css/styles.css">
+
+</head>
+<body ng-app="trelloGo" ng-controller="mainController as vmMain">
+  
+  <div id="dash">
+    <header>
+      <!-- <img src="images/back.png" id="back-btn" ng-mousedown="vmMain.goToList()"> -->
+    </header>
+    <img id="splash" ng-click="vmMain.removeSplash()" src="images/splash.png">
+    <div id="main" ui-view>
+    </div>
+  </div>
+
+  <!-- FRAMEWORK -->
+  <script src="vendor/angular/angular.js"></script>
+    <script src="vendor/angular-route/angular-route.js"></script>
+    
+
+  <!-- MODULES -->
+  <!--<script type="text/javascript" src="./app/modules/ui-bootstrap-0.12.1.js"></script>-->
+  <script type="text/javascript" src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.1.js"></script>
+  <script type="text/javascript" src="./app/modules/ui-router.js"></script>
+
+  <!-- LOCAL FILES -->
+  <script type="text/javascript" src="./app/app.js"></script>
+  <script type="text/javascript" src="./app/config/config.js"></script>
+  <script type="text/javascript" src="./app/controllers/main.controller.js"></script>
+  <script type="text/javascript" src="./app/controllers/login.controller.js"></script>
+  <script type="text/javascript" src="./app/controllers/list.controller.js"></script>
+  <script type="text/javascript" src="./app/controllers/card.controller.js"></script>
+  <script type="text/javascript" src="./app/controllers/boards.controller.js"></script>
+  <script type="text/javascript" src="./app/controllers/nav.controller.js"></script>
+  <script type="text/javascript" src="./app/factories/card.factory.js"></script>
+  <script type="text/javascript" src="./app/factories/board.factory.js"></script>
+  <script type="text/javascript" src="./app/filters/filters.js"></script>
+
+</body>
+</html>

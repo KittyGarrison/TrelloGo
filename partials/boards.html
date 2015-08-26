@@ -1,0 +1,26 @@
+<div ng-controller="boardsController as vmBoards">
+	<nav>
+		<div class="links">
+			<p>Choose a board to access your TrelloGo list</p>
+		</div>
+	</nav>
+	<div class="views">
+		<div class="arrow">
+			<img src="../images/prvs.png" ng-click="vmBoards.currentPage=vmBoards.currentPage-1" ng-hide="vmBoards.currentPage == 0">
+		    <!-- <button ng-disabled="vmBoards.currentPage == 0" ng-click="vmBoards.currentPage=vmBoards.currentPage-1">
+		        <<
+		    </button> -->
+		</div>
+		<div class="boards">
+			<ul>
+				<li class="heading"><img src="images/trello-mark-grey.png"> My Boards <h4>{{vmBoards.currentPage+1}}/{{vmBoards.numberOfPages()}}</h4></li>
+				<li ng-repeat="board in vmBoards.boards | startFrom:vmBoards.currentPage*vmBoards.pageSize | limitTo:vmBoards.pageSize" class="boardName" ng-mousedown="vmBoards.chooseBoard(board.id, board.name)"><h2>{{board.name}}</h2></li>
+			</ul>
+		</div>
+		<div class="arrow">
+			<img src="../images/next.png" ng-click="vmBoards.currentPage=vmBoards.currentPage+1" ng-hide="vmBoards.currentPage >= vmBoards.boards.length/vmBoards.pageSize - 1">
+		    <!-- <button ng-disabled="vmBoards.currentPage >= vmBoards.boards.length/vmBoards.pageSize - 1" ng-click="vmBoards.currentPage=vmBoards.currentPage+1">
+		        >>
+		    </button> -->		
+	</div>
+</div>

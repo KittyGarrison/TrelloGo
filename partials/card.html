@@ -1,0 +1,14 @@
+<div ng-controller="cardController as vmCard">
+	<nav ng-include="'./partials/nav.html'"></nav>
+	<div class="views">
+		<div class="list center">
+			<h3>{{vmCard.message}}</h3>
+			<form>
+				<input type="text" id="inputCardTitle" placeholder="Card title" ng-model="vmCard.cardTitle"/>
+				<br>
+				<div class="btn green" ng-mousedown="vmCard.addCard()">add</div>
+				<div class="btn red" ng-mousedown="vmCard.goToList()">cancel</div>
+			</form>
+		</div>
+	</div>
+</div>

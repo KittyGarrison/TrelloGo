@@ -1,0 +1,11 @@
+<div ng-controller="loginController as vmLogin">
+	<div class="login">
+		<h3>{{vmLogin.message}}</h3>
+		<form>
+			<input type="text" class="" id="inputUserName" placeholder="username" ng-model="vmLogin.username"/>
+			<br>
+			<input type="password" class="" id="inputPassword" placeholder="password" ng-model="vmLogin.password"/>
+		</form>
+		<a href="#/boards">login with Google</a>
+	</div>
+</div>
