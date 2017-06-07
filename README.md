@@ -16,13 +16,12 @@ TrelloGo is a in-dash app to add cards to your Trello boards while driving. It h
 ```
 
 (function() {
-    angular
-        .module('trelloGo')
-        .constant('config', {
-          appKey: 'yourappkey',
-          token: 'yourtoken'
-        });
-    }
+  angular
+      .module('trelloGo')
+      .constant('config', {
+        appKey: 'yourappkey',
+        token: 'yourtoken'
+      });
 })();
 ```
 
